@@ -41,7 +41,9 @@ exports.updateRam = async (req, res) => {
     const updatedRam = await Ram.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true }
+      { new: true,
+        runValidators: true
+       }
     );
 
     if (!updatedRam) {
