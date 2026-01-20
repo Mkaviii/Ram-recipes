@@ -1,4 +1,3 @@
-
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -53,7 +52,11 @@ const loginUser = async (req, res) => {
     }
 
     //generate token (optional)
-    const token = jwt.sign({ userid: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign(
+      { userId: user._id },
+      process.env.JWT_SECRET,
+      { expiresIn: process.env.JWT_EXPIRES_IN }
+    );
 
     res.status(200).json({ message: "User logged in successfully", token });
   } catch (error) {
@@ -62,4 +65,3 @@ const loginUser = async (req, res) => {
 };
 
 module.exports = { registerUser, loginUser };
-

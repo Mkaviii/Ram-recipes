@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = express.Router();
 
@@ -14,8 +13,8 @@ const isAuthenticated = require('../middlewares/auth');
 
 router.get('/', getAllRams);
 router.get('/:id', isAuthenticated, getRamById);
-router.post('/',  createRam);
-router.put('/:id',  updateRam);
-router.delete('/:id', deleteRam);
+router.post('/', isAuthenticated, createRam);
+router.put('/:id', isAuthenticated, updateRam);
+router.delete('/:id', isAuthenticated, deleteRam);
 
 module.exports = router;
