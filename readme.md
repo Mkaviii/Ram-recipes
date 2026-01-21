@@ -45,4 +45,4 @@ All API endpoints were tested using Postman.
 
 ### Post Recipe API
 ![Post Recipe](Screenshot 2026-01-21 223357-1.png)
-<img src="Screenshot 2026-01-21 223357.png" width="700" />
+<img src="Screenshot 2026-01-21 223357-1.png" width="700" />
